@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "payments")
@@ -57,5 +58,5 @@ public class Payment {
             joinColumns = @JoinColumn(name = "payment_id"),
             inverseJoinColumns = @JoinColumn(name = "extra_id")
     )
-    private List<Extra> paymentExtras;
+    private Set<Extra> paymentExtras;
 }

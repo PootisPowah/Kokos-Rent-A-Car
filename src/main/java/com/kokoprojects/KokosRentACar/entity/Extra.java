@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "extras")
@@ -33,5 +34,5 @@ public class Extra {
     private String description;
 
     @ManyToMany(mappedBy = "paymentExtras")
-    private List<Payment> payments;
+    private Set<Payment> payments;
 }
