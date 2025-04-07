@@ -1,7 +1,9 @@
 package com.kokoprojects.KokosRentACar.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,6 +34,11 @@ public class Extra {
     @Size(max = 255, message = "Description can be max 255 characters")
     @Column(name = "extra_description")
     private String description;
+
+    @NotNull
+    @DecimalMin(value = "0.1", message = "Price must be a positive number")
+    @Column(name = "extra_price")
+    private Double price;
 
     @ManyToMany(mappedBy = "paymentExtras")
     private Set<Payment> payments;
