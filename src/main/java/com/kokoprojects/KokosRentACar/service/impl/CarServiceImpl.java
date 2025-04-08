@@ -35,16 +35,20 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public void addCar(CarAdminDTO carAdminDTO) {
-        Car car = carMapper.toCar(carAdminDTO);
-        carRepository.save(car);
-
+    public CarDTO addCar(CarDTO carDTO) {
+        Car car = carMapper.toCar(carDTO);
+        Car savedCar = carRepository.save(car);
+        return carMapper.toCarDTO(savedCar);
 
     }
 
     @Override
-    public void updateCar(CarAdminDTO carAdminDTO) {
+    public CarDTO updateCar(CarDTO carDTO, long carId) {
 
+        Car car = carRepository.findById(carId).orElseThrow(() -> new RuntimeException("Car with id " + carId + " not found"));  ;
+        carMapper.updateCar(carDTO, car);
+        Car savedCar = carRepository.save(car);
+        return carMapper.toCarDTO(savedCar);
     }
 
     @Override

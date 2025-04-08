@@ -25,7 +25,6 @@ public class CarDetails {
 
     @Id
     //generated value for vin
-    @NotNull
     @Size(min = 17, max = 17, message = "VIN must be 17 characters long")
     @Column(name = "vin", unique = true)
     private String vin = VinGenerator.generateVin();

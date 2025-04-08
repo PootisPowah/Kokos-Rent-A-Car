@@ -1,5 +1,6 @@
 package com.kokoprojects.KokosRentACar.entity.dto;
 
+import com.kokoprojects.KokosRentACar.entity.misc.VinGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,6 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class CarDetailsDTO {
-    //NO VIN
     private String licencePlate;
     private String brand;
     private String model;

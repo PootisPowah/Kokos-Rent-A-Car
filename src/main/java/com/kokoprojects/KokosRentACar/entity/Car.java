@@ -23,13 +23,13 @@ public class Car {
 
     //vin
     @NotNull(message = "Car details (VIN) must be provided")
-    @OneToOne
-    @JoinColumn(name = "vin", unique = true, nullable = false)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "vin", unique = true, nullable = true)
     private CarDetails carDetails;
 
     @NotNull(message = "Rental rate is required")
     @DecimalMin(value = "0.0", inclusive = false, message = "Rental rate must be greater than 0")
-    @Column(name = "rental_rate", nullable = false)
+    @Column(name = "rental_rate", nullable = true)
     private Double rentalRate;
 
     @Column(name = "is_available", nullable = false)
