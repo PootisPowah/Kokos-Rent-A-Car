@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface CarService {
 
-    CarDTO getCarById(Long id);
+    CarDTO getCarById(long id);
     List<CarDTO> getAllCars();
     CarDTO addCar(CarDTO carDTO);
     CarDTO updateCar(CarDTO carDTO, long carId);
-    void deleteCarById(Long id);
+    void deleteCarById(long id);
 }

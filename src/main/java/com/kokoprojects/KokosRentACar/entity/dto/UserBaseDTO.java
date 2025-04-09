@@ -20,5 +20,5 @@ public class UserBaseDTO {
     private String lastName;
     private String phone;
     private LocalDate birthDate;
-    private Role role;
+    //private Role role;
 }
