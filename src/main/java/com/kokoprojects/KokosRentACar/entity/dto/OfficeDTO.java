@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class OfficeDTO {
 
-    private Long addressId;
+    private AddressDTO address;
 
     private String phone;
 }

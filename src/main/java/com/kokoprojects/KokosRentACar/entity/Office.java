@@ -23,13 +23,13 @@ public class Office {
     @Column(name="office_id")
     private Long id;
 
-    @OneToOne(optional = false)
+    @OneToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "address_id", nullable = false, unique = true)
     private Address address;
 
     @NotBlank(message = "Phone number is required")
     @Size(max = 20, message = "Phone number must not exceed 20 characters")
-    @Column(name = "phone", nullable = false, unique = true)
+    @Column(name = "phone", nullable = false)
     private String phone;
 
 

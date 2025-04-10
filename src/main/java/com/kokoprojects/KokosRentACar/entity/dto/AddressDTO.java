@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AddressDTO {
-    private String countryCode = "BG";
+    //private String countryCode = "BG";
     private String city;
     private String streetName;
     private String streetNumber;
