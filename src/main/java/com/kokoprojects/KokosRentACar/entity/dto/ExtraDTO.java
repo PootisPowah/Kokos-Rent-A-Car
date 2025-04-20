@@ -1,5 +1,6 @@
 package com.kokoprojects.KokosRentACar.entity.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,10 +10,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddressDTO {
-    //private String countryCode = "BG";
-    private Long addressId;
-    private String city;
-    private String streetName;
-    private String streetNumber;
+public class ExtraDTO {
+
+    @NotBlank
+    private String name;
+
+    private String description;
+
+    @NotBlank
+    private Double price;
 }
